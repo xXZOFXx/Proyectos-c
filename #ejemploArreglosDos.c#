@@ -1,0 +1,87 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define NMATERIAS  5
+#define NPARCIALES 3 
+
+int m_calificaciones[NMATERIAS][NPARCIALES];
+
+int main(int argc, char*argv[]){
+
+  inicializaArreglo();
+  capturaArreglo();
+  imprimeArreglo();
+
+  return 0;
+
+
+}
+
+inicializaArreglo(){
+
+  int renglon = 0;
+  int colmuna = 0;
+
+  for(colmuna=0; colmuna < NPARCIALES; colmuna++){
+
+    for(renglon=0; renglon<NMATERIAS; renglon++){
+
+      m_calificaciones[renglon][colmuna]=0;
+
+
+    }
+
+
+  }
+
+}
+
+
+
+
+
+
+
+capturaArreglo(){
+
+  int renglon = 0;
+  int colmuna = 0;
+
+  for(colmuna=0; colmuna < NPARCIALES; colmuna++){
+
+    printf("captura de parcial %i:\n", colmuna+1);
+
+    for(renglon=0; renglon<NMATERIAS; renglon++){
+      printf("captura calificacion materia  %i:", renglon+1);
+      scanf("%i", &m_calificaciones[renglon][colmuna]);
+
+
+    }
+
+
+  }
+
+}
+
+
+
+
+imprimeArreglo(){
+
+  int renglon = 0;
+  int colmuna = 0;
+
+  for(renglon=0; renglon < NMATERIAS; renglon++){
+
+    for(colmuna=0; colmuna<NPARCIALES; colmuna++){
+
+      printf("Materia %i Parcial %i : %i\t",renglon+1, colmuna+1, m_calificaciones[renglon][colmuna]);
+
+
+    }
+
+    printf("\n");
+
+
+  }
+
+}
